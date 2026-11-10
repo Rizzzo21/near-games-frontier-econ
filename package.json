@@ -1,0 +1,1 @@
+{"description":"FRONTIER-ECON - autonomous NPC wallets, player-owned AMM/orderbook market, and self-balancing game economy","devDependencies":{"near-api-js":"^5.1.1","near-sdk-js":"^2.0.0"},"license":"MIT","name":"@near-contest/autonomous-npc-economy","scripts":{"demo":"node scripts/demo.mjs","test":"node --test test/engine.test.mjs"},"type":"module","version":"1.0.0"}
