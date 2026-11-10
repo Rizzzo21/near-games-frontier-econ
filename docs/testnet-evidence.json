@@ -1,0 +1,109 @@
+{
+  "network": "testnet",
+  "contract_account": "frontier-econ-backstop-1119.testnet",
+  "contract_explorer": "https://explorer.testnet.near.org/accounts/frontier-econ-backstop-1119.testnet",
+  "contract_wasm_sha256": "ee40327977227b817d16bf8b14968e0214e5a25fc79f487e680c69479a9ce6e2",
+  "deployed_at_utc": "2026-11-10T03:00:44.244Z",
+  "token": {
+    "name": "Frontier Gold",
+    "symbol": "FGOLD",
+    "decimals": 6,
+    "total_supply_fgold": "20000.00"
+  },
+  "npc_accounts": {
+    "blacksmith": "smith-1119.testnet",
+    "miner": "miner-1119.testnet",
+    "player": "kira-1119.testnet",
+    "guild_wallet": "guild.npc"
+  },
+  "flow": {
+    "deploy": {
+      "tx": "FZtZEbgqMjYbWRh5L87Qcd9MZQdrAN8pFhLb4E8DSbyu",
+      "explorer": "https://explorer.testnet.near.org/transactions/FZtZEbgqMjYbWRh5L87Qcd9MZQdrAN8pFhLb4E8DSbyu"
+    },
+    "init_mint_20000_fgold": {
+      "tx": "CyW8MHpmFrttf7QspCMxuW772GuzhmFgHecKXgbBwNem",
+      "explorer": "https://explorer.testnet.near.org/transactions/CyW8MHpmFrttf7QspCMxuW772GuzhmFgHecKXgbBwNem"
+    },
+    "fund_smith_800": {
+      "tx": "3uTcna2pTqAFjB7d5u88Yk4nDfpt8XMMePYMzXeP3vKr",
+      "explorer": "https://explorer.testnet.near.org/transactions/3uTcna2pTqAFjB7d5u88Yk4nDfpt8XMMePYMzXeP3vKr"
+    },
+    "fund_miner_200": {
+      "tx": "HvEVPX9M91HqJcnqinKVwJ9vtDCXxx2ng5bwtKa5zEyq",
+      "explorer": "https://explorer.testnet.near.org/transactions/HvEVPX9M91HqJcnqinKVwJ9vtDCXxx2ng5bwtKa5zEyq"
+    },
+    "fund_guild_1500": {
+      "tx": "4jkgfqMNejEMuCJCJdK3m39Pj9G9sK7krrJwFNKXT4aw",
+      "explorer": "https://explorer.testnet.near.org/transactions/4jkgfqMNejEMuCJCJdK3m39Pj9G9sK7krrJwFNKXT4aw"
+    },
+    "grant_miner_6_ore": {
+      "tx": "3xmW9NT3rSUfdLu5d5dAMEMoQNTtK8h83m5ZcV2N1rms",
+      "explorer": "https://explorer.testnet.near.org/transactions/3xmW9NT3rSUfdLu5d5dAMEMoQNTtK8h83m5ZcV2N1rms"
+    },
+    "grant_smith_12_ingot": {
+      "tx": "7BQXZNiQHC475SESC7NCSfJaxjeYdBS3oHqV4Ax5kib1",
+      "explorer": "https://explorer.testnet.near.org/transactions/7BQXZNiQHC475SESC7NCSfJaxjeYdBS3oHqV4Ax5kib1"
+    },
+    "seed_pools": {
+      "tx": "DvQV9TvHZBGePThwacHWq2DENcdJnKAtucaq1o4NRgps",
+      "explorer": "https://explorer.testnet.near.org/transactions/DvQV9TvHZBGePThwacHWq2DENcdJnKAtucaq1o4NRgps"
+    },
+    "empty_wallet_buy_refused": {
+      "tx": "GMu5cyvkexQeCp7QWSphtYjdydzNrU6F2vJMwY4bkzqQ",
+      "explorer": "https://explorer.testnet.near.org/transactions/GMu5cyvkexQeCp7QWSphtYjdydzNrU6F2vJMwY4bkzqQ",
+      "error": "{\"index\":0,\"kind\":{\"index\":0,\"kind\":{\"FunctionCallError\":{\"ExecutionError\":\"Smart contract panicked: insufficient_balance: kira-1119.testnet holds 0 micro-FGOLD, trade costs 25000000 micro-FGOLD\\n    at npc_trade (build/contract.js:2809)\\n    at apply (native)\\n    at <anonymous> (build/contract.js:"
+    },
+    "npc_trade_6_ore_at_25": {
+      "tx": "ECSJa5J9AdjUzUSWX1kfU2GMhgctnxKCd26fPRxdaER9",
+      "explorer": "https://explorer.testnet.near.org/transactions/ECSJa5J9AdjUzUSWX1kfU2GMhgctnxKCd26fPRxdaER9",
+      "cost_fgold": "150.00",
+      "smith_after_fgold": "650.00",
+      "miner_after_fgold": "350.00"
+    },
+    "scarcity_shock_100_to_60": {
+      "tx": "CXngDrE7SMJJXUj9uTJ5kYG4vjRqS8T6dSdCf8yAYnGS",
+      "explorer": "https://explorer.testnet.near.org/transactions/CXngDrE7SMJJXUj9uTJ5kYG4vjRqS8T6dSdCf8yAYnGS",
+      "price_after_fgold": "41.67"
+    },
+    "under_collateralized_buy_refused": {
+      "tx": "DTwU3z35wKzZcPcioBS6HyN96mbCWiZU4izy5Ko93zK4",
+      "explorer": "https://explorer.testnet.near.org/transactions/DTwU3z35wKzZcPcioBS6HyN96mbCWiZU4izy5Ko93zK4",
+      "error": "{\"index\":0,\"kind\":{\"index\":0,\"kind\":{\"FunctionCallError\":{\"ExecutionError\":\"Smart contract panicked: insufficient_balance: miner-1119.testnet holds 350000000 micro-FGOLD, trade costs 833333320 micro-FGOLD\\n    at npc_trade (build/contract.js:2809)\\n    at apply (native)\\n    at <anonymous> (build/co"
+    },
+    "grant_kira_4_blades": {
+      "tx": "FQpM1BxLm76pyRQPVBCpxn1RE6MWaeqYUDBDDB2sWvHC",
+      "explorer": "https://explorer.testnet.near.org/transactions/FQpM1BxLm76pyRQPVBCpxn1RE6MWaeqYUDBDDB2sWvHC"
+    },
+    "sell_blades_4": {
+      "tx": "5ooNwW3iY5napKikdQVexcXzPniho5iee9CTMMnNmzC5",
+      "explorer": "https://explorer.testnet.near.org/transactions/5ooNwW3iY5napKikdQVexcXzPniho5iee9CTMMnNmzC5",
+      "gross_fgold": "307.69",
+      "lp_fee_fgold": "6.15",
+      "net_fgold": "301.54"
+    }
+  },
+  "final_state": {
+    "owner": "frontier-econ-backstop-1119.testnet",
+    "total_supply_micro": "20000000000",
+    "npc_supply_micro": "2500000000",
+    "ore_reserve": "60",
+    "ore_gold_micro": "2500000000",
+    "blade_reserve": "104",
+    "blade_gold_micro": "7692307692",
+    "lp_fees_micro": "6153846",
+    "ore_price_micro": "41666666"
+  },
+  "verified_figures": {
+    "ore_price_before_fgold": "25.00",
+    "ore_price_after_fgold": "41.67",
+    "price_move_pct": "+66.68%",
+    "smith_fgold_after_trade": "650.00",
+    "miner_fgold_after_trade": "350.00",
+    "npc_supply_fgold": "2500.00",
+    "blade_sale_gross_fgold": "307.69",
+    "blade_sale_lp_fee_fgold": "6.15",
+    "blade_sale_net_fgold": "301.54"
+  },
+  "disclosure": "Minimal NEP-141 FT + CPMM game market. The scarcity shock is an exogenous demo step (mine depletes; the operator supplies the removed quantity and the contract recomputes the price from live reserves). The guild wallet is a contract-level NEP-141 balance entry; blacksmith, miner and player-kira are real testnet accounts. No ft_transfer_call in this minimal FT."
+}

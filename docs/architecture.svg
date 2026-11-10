@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="440" viewBox="0 0 920 440" font-family="monospace">
+  <rect width="920" height="440" fill="#ffffff"/>
+  <text x="460" y="34" text-anchor="middle" font-size="18" font-weight="bold" fill="#111">FRONTIER-ECON — NPC wallets → NEP-141 token → AMM pools</text>
+  <text x="460" y="56" text-anchor="middle" font-size="12" fill="#555">NEAR testnet contract: frontier-econ-backstop-1119.testnet (deployed 2026-11-10)</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- NPC wallets -->
+  <rect x="30" y="110" width="190" height="110" rx="8" fill="#eef4ff" stroke="#3355aa" stroke-width="2"/>
+  <text x="125" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">NPC wallets</text>
+  <text x="125" y="162" text-anchor="middle" font-size="11" fill="#333">smith: 800 FGOLD</text>
+  <text x="125" y="178" text-anchor="middle" font-size="11" fill="#333">miner: 200 FGOLD</text>
+  <text x="125" y="194" text-anchor="middle" font-size="11" fill="#333">guild: 1,500 FGOLD</text>
+  <text x="125" y="210" text-anchor="middle" font-size="11" fill="#333">kira (player): 0 FGOLD</text>
+
+  <!-- FGOLD token -->
+  <rect x="270" y="110" width="180" height="110" rx="8" fill="#fff7e6" stroke="#aa7711" stroke-width="2"/>
+  <text x="360" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">FGOLD (NEP-141)</text>
+  <text x="360" y="162" text-anchor="middle" font-size="11" fill="#333">Frontier Gold, 6 dp</text>
+  <text x="360" y="178" text-anchor="middle" font-size="11" fill="#333">20,000 minted to owner</text>
+  <text x="360" y="194" text-anchor="middle" font-size="11" fill="#333">ft_transfer / ft_balance_of</text>
+  <text x="360" y="210" text-anchor="middle" font-size="11" fill="#333">integer micro-FGOLD</text>
+
+  <!-- AMM pools -->
+  <rect x="500" y="110" width="180" height="110" rx="8" fill="#eaffea" stroke="#227722" stroke-width="2"/>
+  <text x="590" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">AMM pools</text>
+  <text x="590" y="162" text-anchor="middle" font-size="11" fill="#333">ORE: 100 / 2,500 FGOLD</text>
+  <text x="590" y="178" text-anchor="middle" font-size="11" fill="#333">BLADE: 100 / 8,000 FGOLD</text>
+  <text x="590" y="194" text-anchor="middle" font-size="11" fill="#333">price = gold / item</text>
+  <text x="590" y="210" text-anchor="middle" font-size="11" fill="#333">2% LP fee on sales</text>
+
+  <!-- Demo flow -->
+  <rect x="730" y="110" width="160" height="110" rx="8" fill="#fdeaea" stroke="#aa2222" stroke-width="2"/>
+  <text x="810" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">Demo flow</text>
+  <text x="810" y="162" text-anchor="middle" font-size="11" fill="#333">trade 6 ORE @ 25.00</text>
+  <text x="810" y="178" text-anchor="middle" font-size="11" fill="#333">shock 100 → 60 ORE</text>
+  <text x="810" y="194" text-anchor="middle" font-size="11" fill="#333">price → 41.67 (+66.68%)</text>
+  <text x="810" y="210" text-anchor="middle" font-size="11" fill="#333">sell 4 blades → 301.54</text>
+
+  <!-- Failure path -->
+  <rect x="160" y="280" width="600" height="90" rx="8" fill="#f0eaff" stroke="#6622aa" stroke-width="2"/>
+  <text x="460" y="310" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">Failure path (on-chain, both refused with insufficient_balance)</text>
+  <text x="460" y="332" text-anchor="middle" font-size="11" fill="#333">kira (0 FGOLD) buys 1 ORE @ 25.00 → REFUSED · miner (350 FGOLD) buys 20 ORE @ 41.67 (costs 833.33) → REFUSED</text>
+  <text x="460" y="348" text-anchor="middle" font-size="11" fill="#333">Final on-chain state: smith 650.00 · miner 350.00 · kira 301.54 FGOLD · NPC supply conserved 2,500 FGOLD</text>
+  <text x="460" y="364" text-anchor="middle" font-size="11" fill="#333">ore price 41.67 · ore reserve 60 · blade reserve 104 · LP fees 6.15 FGOLD</text>
+
+  <!-- Arrows -->
+  <line x1="220" y1="165" x2="268" y2="165" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="450" y1="165" x2="498" y2="165" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="680" y1="165" x2="728" y2="165" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="590" y1="220" x2="590" y2="278" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <text x="460" y="408" text-anchor="middle" font-size="11" fill="#777">Scarcity shock is an exogenous demo step (owner calls scarcity_shock); the price move is computed by the constant-product formula. Guild wallet is a contract-level balance entry, not a separate account. Minimal FT: no ft_transfer_call.</text>
+  <text x="460" y="426" text-anchor="middle" font-size="11" fill="#777">Off-chain engine (src/engine.mjs) and on-chain contract (contract/src/index.js) share the same integer micro-FGOLD model; all figures are computed, never literals.</text>
+</svg>

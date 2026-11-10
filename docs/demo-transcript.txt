@@ -1,0 +1,40 @@
+=== FRONTIER-ECON (bnty_0419) DETERMINISTIC DEMO TRANSCRIPT ===
+Chain Integrity Verified: true
+Final State Merkle Head:  c1a9300455735f25f83bd0e0ec61f50963dd9edaf9961f2d521fc111e64c44ce
+
+[STEP 1] npc_trade
+  Summary: Blacksmith NPC (wallet 800.00 FGOLD, inventory 12 IRON_INGOT) buys 6 IRON_ORE from Miner NPC (wallet 200.00 FGOLD) at market price 25.00 FGOLD/unit -> Blacksmith wallet = 650.00 FGOLD, Miner wallet = 350.00 FGOLD, total money supply conserved = 2500.00 FGOLD
+  Metrics: {"buyer_npc":"blacksmith.npc","seller_npc":"miner.npc","item":"IRON_ORE","qty":6,"unit_price_fgold":"25.00","blacksmith_fgold_after":"650.00","miner_fgold_after":"350.00","total_supply_fgold":"2500.00"}
+  Hash:    a015ea280904a001048400efec0f455657e49549fa05b8daa413f57ed07e3207
+
+[STEP 2] market_price_moves
+  Summary: Scarcity shock reduces IRON_ORE pool reserve from 100 to 60 units -> constant-product market price moves endogenously from 25.00 FGOLD to 41.67 FGOLD (+66.68%) without any admin parameter patch
+  Metrics: {"pool":"IRON_ORE/FGOLD","reserve_before":100,"reserve_after":60,"price_before_fgold":"25.00","price_after_fgold":"41.67","pct_change":"66.68%"}
+  Hash:    86a2c14fdc3d9c976a6fa0ec00e1835ab76c92005584ca81b6269a366aa73a23
+
+[STEP 3] player_sale
+  Summary: player-kira crafts 4 STEEL_BLADE and sells into the player-owned market pool -> receives 301.54 FGOLD net of 2.00% LP fee (6.15 FGOLD distributed to player liquidity providers)
+  Metrics: {"player":"player-kira","item":"STEEL_BLADE","qty":4,"gross_payout_fgold":"307.69","net_payout_fgold":"301.54","lp_fee_fgold":"6.15"}
+  Hash:    c1a9300455735f25f83bd0e0ec61f50963dd9edaf9961f2d521fc111e64c44ce
+
+=== FAILURE-PATH PROBES (off-chain model) ===
+  empty wallet buy:        REFUSED: insufficient_balance: player-kira holds 0.00 FGOLD, trade costs 25.00 FGOLD
+  under-collateralized buy: REFUSED: insufficient_balance: miner.npc holds 350.00 FGOLD, trade costs 833.33 FGOLD
+  blade sale, no inventory: REFUSED: insufficient_inventory: player-kira holds 0 STEEL_BLADE, sale needs 4
+
+=== ON-CHAIN EVIDENCE (NEAR testnet) ===
+Contract: frontier-econ-backstop-1119.testnet (FGOLD, NEP-141, 20000.00 FGOLD minted)
+Deploy:   FZtZEbgqMjYbWRh5L87Qcd9MZQdrAN8pFhLb4E8DSbyu
+Init:     CyW8MHpmFrttf7QspCMxuW772GuzhmFgHecKXgbBwNem
+Fund smith 800 FGOLD:  3uTcna2pTqAFjB7d5u88Yk4nDfpt8XMMePYMzXeP3vKr
+Fund miner 200 FGOLD:  HvEVPX9M91HqJcnqinKVwJ9vtDCXxx2ng5bwtKa5zEyq
+Fund guild 1500 FGOLD: 4jkgfqMNejEMuCJCJdK3m39Pj9G9sK7krrJwFNKXT4aw
+Seed pools: DvQV9TvHZBGePThwacHWq2DENcdJnKAtucaq1o4NRgps
+Refused (empty wallet): GMu5cyvkexQeCp7QWSphtYjdydzNrU6F2vJMwY4bkzqQ (insufficient_balance)
+NPC trade (6 ORE @ 25.00): ECSJa5J9AdjUzUSWX1kfU2GMhgctnxKCd26fPRxdaER9
+Scarcity shock (100 -> 60): CXngDrE7SMJJXUj9uTJ5kYG4vjRqS8T6dSdCf8yAYnGS
+Refused (under-collateralized): DTwU3z35wKzZcPcioBS6HyN96mbCWiZU4izy5Ko93zK4 (insufficient_balance)
+Blade sale (4 blades): 5ooNwW3iY5napKikdQVexcXzPniho5iee9CTMMnNmzC5
+On-chain ore price: 25.00 -> 41.67 FGOLD (+66.68%)
+On-chain blade sale: gross 307.69, LP fee 6.15, net 301.54 FGOLD
+Explorer: https://explorer.testnet.near.org/accounts/frontier-econ-backstop-1119.testnet

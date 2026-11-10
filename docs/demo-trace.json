@@ -1,0 +1,62 @@
+{
+  "track": "FRONTIER-ECON",
+  "bountyId": "bnty_0419",
+  "eventCount": 3,
+  "headHash": "c1a9300455735f25f83bd0e0ec61f50963dd9edaf9961f2d521fc111e64c44ce",
+  "chainVerified": true,
+  "events": [
+    {
+      "index": 0,
+      "step": "npc_trade",
+      "payload": {
+        "summary": "Blacksmith NPC (wallet 800.00 FGOLD, inventory 12 IRON_INGOT) buys 6 IRON_ORE from Miner NPC (wallet 200.00 FGOLD) at market price 25.00 FGOLD/unit -> Blacksmith wallet = 650.00 FGOLD, Miner wallet = 350.00 FGOLD, total money supply conserved = 2500.00 FGOLD",
+        "metrics": {
+          "buyer_npc": "blacksmith.npc",
+          "seller_npc": "miner.npc",
+          "item": "IRON_ORE",
+          "qty": 6,
+          "unit_price_fgold": "25.00",
+          "blacksmith_fgold_after": "650.00",
+          "miner_fgold_after": "350.00",
+          "total_supply_fgold": "2500.00"
+        }
+      },
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "a015ea280904a001048400efec0f455657e49549fa05b8daa413f57ed07e3207"
+    },
+    {
+      "index": 1,
+      "step": "market_price_moves",
+      "payload": {
+        "summary": "Scarcity shock reduces IRON_ORE pool reserve from 100 to 60 units -> constant-product market price moves endogenously from 25.00 FGOLD to 41.67 FGOLD (+66.68%) without any admin parameter patch",
+        "metrics": {
+          "pool": "IRON_ORE/FGOLD",
+          "reserve_before": 100,
+          "reserve_after": 60,
+          "price_before_fgold": "25.00",
+          "price_after_fgold": "41.67",
+          "pct_change": "66.68%"
+        }
+      },
+      "prevHash": "a015ea280904a001048400efec0f455657e49549fa05b8daa413f57ed07e3207",
+      "hash": "86a2c14fdc3d9c976a6fa0ec00e1835ab76c92005584ca81b6269a366aa73a23"
+    },
+    {
+      "index": 2,
+      "step": "player_sale",
+      "payload": {
+        "summary": "player-kira crafts 4 STEEL_BLADE and sells into the player-owned market pool -> receives 301.54 FGOLD net of 2.00% LP fee (6.15 FGOLD distributed to player liquidity providers)",
+        "metrics": {
+          "player": "player-kira",
+          "item": "STEEL_BLADE",
+          "qty": 4,
+          "gross_payout_fgold": "307.69",
+          "net_payout_fgold": "301.54",
+          "lp_fee_fgold": "6.15"
+        }
+      },
+      "prevHash": "86a2c14fdc3d9c976a6fa0ec00e1835ab76c92005584ca81b6269a366aa73a23",
+      "hash": "c1a9300455735f25f83bd0e0ec61f50963dd9edaf9961f2d521fc111e64c44ce"
+    }
+  ]
+}
